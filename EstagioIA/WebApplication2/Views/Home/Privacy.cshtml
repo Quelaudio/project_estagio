@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Recortar Caras";
+}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recortar Caras</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 6px 12px;
+            background-color: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        main {
+            padding: 20px;
+            border: 2px solid #007bff;
+            margin: 20px;
+            background: white;
+        }
+
+        .input-section {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+            .input-section label {
+                display: block;
+                font-size: 12px;
+            }
+
+            .input-section input[type="file"] {
+                display: block;
+                padding: 6px;
+                margin-top: 5px;
+            }
+
+        #gerar-recorte {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .result {
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+            .result img {
+                max-width: 150px;
+                margin: 10px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🅱️</div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index" class="btn-link">Retirar Cores</a>
+            <a asp-controller="Home" asp-action="Privacy" class="btn-link">Recortar Caras</a>
+            <a asp-controller="Home" asp-action="wizard" class="btn-link">Gerar Template HTML</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <div>
+                <label>Insira aqui a imagem com a cara</label>
+                <input type="file" id="file-upload" />
+            </div>
+            <button id="gerar-recorte">✂️ Gerar Recorte</button>
+        </section>
+
+        <section class="result" id="result-section">
+            <!-- Resultados aparecerão aqui -->
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('gerar-recorte').addEventListener('click', async () => {
+            const input = document.getElementById("file-upload");
+            const file = input.files[0];
+            const resultSection = document.getElementById("result-section");
+
+            if (!file) {
+                alert("Por favor, selecione uma imagem.");
+                return;
+            }
+
+            resultSection.innerHTML = "";
+
+            // Mostrar imagem original
+            const originalImg = document.createElement('img');
+            originalImg.src = URL.createObjectURL(file);
+            originalImg.alt = "Imagem original";
+            resultSection.innerHTML = "<p><strong>Imagem Original:</strong></p>";
+            resultSection.appendChild(originalImg);
+
+            const formData = new FormData();
+            formData.append("imageFile", file);
+
+            try {
+                const response = await fetch("http://localhost:50372/FaceControllers/GetFaces", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error("Erro ao chamar a API");
+
+                const data = await response.json();
+
+                if (!data || !data.faces_cut || data.faces_cut.length === 0) {
+                    resultSection.innerHTML += "<p>Nenhuma cara foi detetada.</p>";
+                    return;
+                }
+
+                const faceTitle = document.createElement('p');
+                faceTitle.innerHTML = "<strong>Recortes de Caras:</strong>";
+                resultSection.appendChild(faceTitle);
+
+                data.faces_cut.forEach(faceUrl => {
+                    const img = document.createElement('img');
+                    img.src = faceUrl;
+                    img.alt = "Cara detectada";
+                    resultSection.appendChild(img);
+                });
+
+            } catch (err) {
+                console.error(err);
+                alert("Erro ao processar imagem.");
+            }
+        });
+    </script>
+
+</body>
+</html>
