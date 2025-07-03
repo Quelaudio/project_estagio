@@ -3,56 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\p059914\\Downloads\\EstagioIA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\controllers\\facecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\controllers\\facecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\controllers\\htmlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\controllers\\htmlcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\home\\wizard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\home\\wizard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\controllers\\colourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\controllers\\colourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\providers\\geminicore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\providers\\geminicore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\controllers\\colourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\controllers\\colourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\controllers\\facecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\controllers\\facecontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\configs\\geminisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\configs\\geminisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\providers\\geminicore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\providers\\geminicore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\providers\\chatgptcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\providers\\chatgptcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\models\\facemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\models\\facemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\models\\coloursmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\models\\coloursmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\configs\\apisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|solutionrelative:estagio_projectw\\configs\\apisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|c:\\users\\p059914\\downloads\\estagioia\\webapplication2\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2973D926-EEC7-4E56-9981-9804B6CE944D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|c:\\users\\p059914\\downloads\\estagioia\\classlibrary1\\models\\facemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C6FAB25-8EF7-49F7-930B-8060E1C14137}|ClassLibrary1\\CoreAI.csproj|solutionrelative:classlibrary1\\models\\facemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1AC6A334-6CDF-4258-B99A-3E5C6F614A16}|estagio_projectw\\WebApi.csproj|c:\\users\\p059914\\downloads\\estagioia\\estagio_projectw\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -130,7 +142,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
+              "Title": "ChatGptCore.cs",
+              "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Providers\\ChatGptCore.cs",
+              "RelativeDocumentMoniker": "ClassLibrary1\\Providers\\ChatGptCore.cs",
+              "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Providers\\ChatGptCore.cs",
+              "RelativeToolTip": "ClassLibrary1\\Providers\\ChatGptCore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T00:04:12.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication2\\appsettings.json",
+              "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\appsettings.json",
+              "RelativeToolTip": "WebApplication2\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-29T23:35:06.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ColoursModel.cs",
+              "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Models\\ColoursModel.cs",
+              "RelativeDocumentMoniker": "ClassLibrary1\\Models\\ColoursModel.cs",
+              "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Models\\ColoursModel.cs",
+              "RelativeToolTip": "ClassLibrary1\\Models\\ColoursModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T10:05:50.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "estagio_projectw\\Properties\\launchSettings.json",
@@ -142,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "ApiSettings.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Configs\\ApiSettings.cs",
               "RelativeDocumentMoniker": "estagio_projectw\\Configs\\ApiSettings.cs",
@@ -160,13 +208,13 @@
               "RelativeDocumentMoniker": "estagio_projectw\\Configs\\GeminiSettings.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Configs\\GeminiSettings.cs",
               "RelativeToolTip": "estagio_projectw\\Configs\\GeminiSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwBIAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T09:37:33.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\HomeController.cs",
@@ -178,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Program.cs",
@@ -190,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "WebApplication2\\Views\\_ViewStart.cshtml",
@@ -202,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "WebApplication2\\Views\\_ViewImports.cshtml",
@@ -214,20 +262,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "wizard.cshtml",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\wizard.cshtml",
               "RelativeDocumentMoniker": "WebApplication2\\Views\\Home\\wizard.cshtml",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\wizard.cshtml",
               "RelativeToolTip": "WebApplication2\\Views\\Home\\wizard.cshtml",
-              "ViewState": "AgIAAPsAAAAAAAAAAAAAwBYBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAuwOwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-03T08:03:14.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 12,
               "Title": "FaceModel.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Models\\FaceModel.cs",
               "RelativeDocumentMoniker": "ClassLibrary1\\Models\\FaceModel.cs",
@@ -239,56 +287,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "FaceControllers.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\FaceControllers.cs",
               "RelativeDocumentMoniker": "estagio_projectw\\Controllers\\FaceControllers.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\FaceControllers.cs",
               "RelativeToolTip": "estagio_projectw\\Controllers\\FaceControllers.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAswCYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAA3wJoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T12:55:15.793Z"
+              "WhenOpened": "2025-05-28T12:55:15.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication2\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "WebApplication2\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAQwJkAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAJgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T12:50:26.204Z"
+              "WhenOpened": "2025-05-28T12:50:26.204Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "WebApplication2\\Views\\Home\\Privacy.cshtml",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\WebApplication2\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "WebApplication2\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIkAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAswKsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T12:48:17.133Z"
+              "WhenOpened": "2025-05-28T12:48:17.133Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HtmlController.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\HtmlController.cs",
               "RelativeDocumentMoniker": "estagio_projectw\\Controllers\\HtmlController.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\HtmlController.cs",
               "RelativeToolTip": "estagio_projectw\\Controllers\\HtmlController.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAAwIIAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAvwHsAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T11:09:02.937Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\appsettings.Development.json",
               "RelativeDocumentMoniker": "estagio_projectw\\appsettings.Development.json",
@@ -300,51 +351,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\appsettings.json",
               "RelativeDocumentMoniker": "estagio_projectw\\appsettings.json",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\appsettings.json",
               "RelativeToolTip": "estagio_projectw\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABMAAAD3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T10:28:47.649Z"
+              "WhenOpened": "2025-05-22T10:28:47.649Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "GeminiCore.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Providers\\GeminiCore.cs",
               "RelativeDocumentMoniker": "ClassLibrary1\\Providers\\GeminiCore.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\ClassLibrary1\\Providers\\GeminiCore.cs",
               "RelativeToolTip": "ClassLibrary1\\Providers\\GeminiCore.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAnwDcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAArwDcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T09:24:59.047Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Program.cs",
               "RelativeDocumentMoniker": "estagio_projectw\\Program.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Program.cs",
               "RelativeToolTip": "estagio_projectw\\Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAQwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T09:20:26.672Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ColourController.cs",
               "DocumentMoniker": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\ColourController.cs",
               "RelativeDocumentMoniker": "estagio_projectw\\Controllers\\ColourController.cs",
               "ToolTip": "C:\\Users\\p059914\\Downloads\\EstagioIA\\estagio_projectw\\Controllers\\ColourController.cs",
               "RelativeToolTip": "estagio_projectw\\Controllers\\ColourController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA1wCgAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAswFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T09:19:32.742Z"
+              "WhenOpened": "2025-05-22T09:19:32.742Z",
+              "EditorCaption": ""
             }
           ]
         },

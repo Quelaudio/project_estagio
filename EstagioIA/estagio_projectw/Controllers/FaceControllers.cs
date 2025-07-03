@@ -41,15 +41,21 @@ namespace WebApi.Controllers
                 await imageFile.CopyToAsync(ms);
                 byte[] imageBytes = ms.ToArray();
 
+
+                
                 Image image;
+               
                 try
                 {
                     image = Image.FromStream(new MemoryStream(imageBytes));
+                   
                 }
                 catch
                 {
                     return BadRequest("Arquivo de imagem inválido ou corrompido.");
                 }
+
+                
 
                 string faceJson = await _gemini.GetFacePositionsJsonAsync(_geminiSettings.ApiURL, _geminiSettings.PromptFace, imageBytes);
 
@@ -60,7 +66,7 @@ namespace WebApi.Controllers
                     return BadRequest("Nenhuma face detectada na imagem.");
                 }
 
-                // Diretório para salvar as imagens cortadas
+            
                 string outputDirectory = _apiSettings.FacesDirectory;
                 Directory.CreateDirectory(outputDirectory);
 
@@ -75,10 +81,10 @@ namespace WebApi.Controllers
                         int width = face.Xmax - newX;
                         int height = face.Ymax - newY;
 
-                        // Log das coordenadas para debug
-                        Console.WriteLine($"Image: {image.Width}x{image.Height}, Face rect: X={newX}, Y={newY}, Width={width}, Height={height}");
+                     
+                       
 
-                        // Ajuste para garantir que o retângulo fique dentro da imagem
+                  
                         if (newX < 0) newX = 0;
                         if (newY < 0) newY = 0;
 
@@ -98,19 +104,15 @@ namespace WebApi.Controllers
 
                         using var cropped = Crop(image, width, height, newX, newY);
 
-                        string fileName = $"face_{newX}_{newY}.jpg";
-                        string croppedPath = Path.Combine(outputDirectory, fileName);
-                        cropped.Save(croppedPath, ImageFormat.Jpeg);
+                        using var msCropped = new MemoryStream();
+                        cropped.Save(msCropped, ImageFormat.Jpeg);
+                        string base64 = Convert.ToBase64String(msCropped.ToArray());
+                        string dataUrl = $"data:image/jpeg;base64,{base64}";
+                        croppedImagePaths.Add(dataUrl);
 
-                        // Gera URL pública baseada na configuração do servidor
-                        string publicUrl = $"{Request.Scheme}://{Request.Host}/faces/{fileName}";
-                        croppedImagePaths.Add(publicUrl);
 
-                        /*
-                        string croppedPath = Path.Combine(outputDirectory, $"face_{newX}_{newY}.jpg");
-                        cropped.Save(croppedPath, ImageFormat.Jpeg);
-                        croppedImagePaths.Add(croppedPath);
-                    */
+                     
+                    
                     }
                     catch (Exception ex)
                     {
@@ -126,6 +128,7 @@ namespace WebApi.Controllers
                     faces_cut = croppedImagePaths,
                     datacut = JsonDocument.Parse(faceJson).RootElement
                 });
+
             }
             catch (Exception ex)
             {

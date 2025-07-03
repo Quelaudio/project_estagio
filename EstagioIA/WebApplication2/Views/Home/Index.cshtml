@@ -114,9 +114,18 @@
 
     <main>
         <section class="input-section">
+            <!--
             <div>
                 <label>Insira aqui o nome do logo</label>
                 <input type="text" id="logo-nome" placeholder="Exemplo: benfica" />
+            </div>
+            -->
+            <div>
+                <label>Tipo de análise</label>
+                <select id="drop-text">
+                    <option value="futebol">Futebol</option>
+                    <option value="geral">Geral</option>
+                </select>
             </div>
             <div>
                 <label>upload do logo</label>
@@ -126,21 +135,23 @@
         </section>
 
         <section class="result" id="result-section">
-            <!-- Resultados vão ser inseridos aqui -->
+          
         </section>
     </main>
 
     <script>
                 document.getElementById('gerar-cor').addEventListener('click', async () => {
-          const nome = document.getElementById("logo-nome").value.trim();
+          //const nome = document.getElementById("logo-nome").value.trim();
           const fileInput = document.getElementById("file-upload");
           const file = fileInput.files[0];
-
+          const dropText = document.getElementById("drop-text").value;
+          /*
+          
           if (!nome) {
             alert("Por favor insira o nome do logo.");
             return;
           }
-
+         */
           if (!file) {
             alert("Por favor selecione um arquivo de imagem.");
             return;
@@ -153,8 +164,8 @@
             const formData = new FormData();
            
             formData.append("imageFile", file);
-
-            const response = await fetch("http://localhost:50372/Colour/GetColors?teamName=${encodeURIComponent(nome)}", {
+            
+            const response = await fetch(`http://localhost:50372/Colour/GetColors?dropText=${encodeURIComponent(dropText)}`, {
               method: "POST",
               body: formData
             });
@@ -167,7 +178,7 @@
             // Bloco para cor principal
             const bloco = document.createElement("div");
             bloco.className = "color-block";
-
+            
             const box = document.createElement("div");
             box.className = "color-box";
             box.style.backgroundColor = cor.colourHex;

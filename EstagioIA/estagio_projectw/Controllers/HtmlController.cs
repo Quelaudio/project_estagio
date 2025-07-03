@@ -48,6 +48,7 @@ namespace WebApi.Controllers
                 string formattedPrompt = _geminiSettings.PromptHTML.Replace("{Prompt}", Prompt);
                 var htmlresult = await _gemini.GetFacePositionsJsonAsync(_geminiSettings.ApiURL, formattedPrompt, imageBytes);
 
+                
                 string fileName = $"template_{DateTime.Now:yyyyMMdd_HHmmss}.html";
                 string filePath = Path.Combine(folderPath, fileName);
                 await System.IO.File.WriteAllTextAsync(filePath, htmlresult);
@@ -69,7 +70,7 @@ namespace WebApi.Controllers
 
         [HttpPost("GenerateTemplateFromZip")]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> GenerateTemplateFromZip( string templateName, IFormFile zipFile, string provider = "gemini", bool extractColors = false)  
+        public async Task<IActionResult> GenerateTemplateFromZip( string templateName, IFormFile zipFile, string provider = "gemini", bool extractColors = false)
         {
             try
             {
@@ -80,10 +81,8 @@ namespace WebApi.Controllers
                 string fileName = $"generated_{DateTime.Now:yyyyMMdd_HHmmss}.html";
                 var templatePath = Path.Combine(folderPath, $"{templateName}.html");
 
-                Console.WriteLine($"File Name: {zipFile.FileName}, Size: {zipFile.Length}");
 
                 string htmlTemplate = await System.IO.File.ReadAllTextAsync(templatePath);
-
                 var imageBytesDict = new Dictionary<string, byte[]>();
 
                 using var zipStream = zipFile.OpenReadStream();
@@ -91,7 +90,10 @@ namespace WebApi.Controllers
 
                 foreach (var entry in archive.Entries)
                 {
-                    if (entry.Length == 0 || !entry.Name.EndsWith(".png") && !entry.Name.EndsWith(".jpg") && !entry.Name.EndsWith(".jpeg"))
+                    if (entry.Length == 0 ||
+                        (!entry.Name.EndsWith(".png", StringComparison.OrdinalIgnoreCase) &&
+                         !entry.Name.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) &&
+                         !entry.Name.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase)))
                         continue;
 
                     var dummyName = Path.GetFileNameWithoutExtension(entry.Name);
@@ -99,55 +101,70 @@ namespace WebApi.Controllers
                     using var entryStream = entry.Open();
                     using var ms = new MemoryStream();
                     await entryStream.CopyToAsync(ms);
-                    imageBytesDict[dummyName] = ms.ToArray();
+                    var imageBytes = ms.ToArray();
+                    imageBytesDict[dummyName] = imageBytes;
 
-                    string mimeType = entry.Name.EndsWith(".png") ? "image/png" :
-                                      entry.Name.EndsWith(".jpg") || entry.Name.EndsWith(".jpeg") ? "image/jpeg" : "application/octet-stream";
+                    string mimeType = entry.Name.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ? "image/png" :
+                                      entry.Name.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                                      entry.Name.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ? "image/jpeg" :
+                                      "application/octet-stream";
 
-                    string base64 = $"data:{mimeType};base64,{Convert.ToBase64String(ms.ToArray())}";
-
+                    string base64 = $"data:{mimeType};base64,{Convert.ToBase64String(imageBytes)}";
                     htmlTemplate = htmlTemplate.Replace($"{{{dummyName}}}", base64);
                 }
 
-                var imageBytesList = imageBytesDict.Values.ToList();
+                var extractedColors = new List<string>();
 
-                if (extractColors && imageBytesList.Count > 0)  
+                if (extractColors && imageBytesDict.Count > 0)
                 {
-                    for (int i = 0; i < imageBytesList.Count; i++)
+                    int index = 1;
+                    foreach (var img in imageBytesDict.Values)
                     {
-                        var result = await _gemini.SendImagesAsync(_geminiSettings.ApiURL, _geminiSettings.PromptColor_HTML, (imageBytesList[i], "image/png"));
+                        var result = await _gemini.SendImagesAsync(_geminiSettings.ApiURL,_geminiSettings.PromptColor_HTML,(img, "image/png"));
+                        Console.WriteLine(_geminiSettings.PromptColor_HTML);
 
                         if (!string.IsNullOrEmpty(result))
                         {
                             var color = JsonConvert.DeserializeObject<ColoursModel>(result);
-                            Console.WriteLine($"Cor {i + 1}: {color.ColourHex}");
+                            Console.WriteLine($"Cor {index}: {color?.ColourHex}");
+                            Console.WriteLine(color?.Description);
 
-                            if (!string.IsNullOrEmpty(color?.ColourHex))
-                            {
-                                htmlTemplate = htmlTemplate.Replace($"{{cor{i + 1}}}", color.ColourHex);
-                            }
+                            string colorHex = color?.ColourHex ?? "#000000";
+                            htmlTemplate = htmlTemplate.Replace($"{{cor{index}}}", colorHex);
+                            extractedColors.Add(colorHex);
                         }
                         else
                         {
-                            Console.WriteLine($"Não foi possível extrair a cor da imagem {i + 1}.");
+                            Console.WriteLine($"Não foi possível extrair a cor da imagem {index}.");
+                            extractedColors.Add(null);
                         }
+
+                        index++;
                     }
                 }
-
+                
                 string htmlPath = Path.Combine(folderPath, fileName);
                 await System.IO.File.WriteAllTextAsync(htmlPath, htmlTemplate);
 
                 byte[] finalImageBytes = await PlayWrightManager.GetImage(htmlTemplate, 1920, 1080);
+
                 if (finalImageBytes == null || finalImageBytes.Length == 0)
                     return StatusCode(500, "Falha ao gerar a imagem do HTML.");
 
-                return File(finalImageBytes, "image/png");
+                
+                return Ok(new
+                {
+                    image = $"data:image/png;base64,{Convert.ToBase64String(finalImageBytes)}",
+                    colors = extractedColors,
+                    html = htmlTemplate 
+                });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Erro ao processar o ficheiro ZIP: {ex.Message}");
             }
         }
+
 
     }
 }

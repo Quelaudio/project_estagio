@@ -13,5 +13,9 @@
         public string PromptHTML { get; set; }
 
         public string PromptColor_HTML { get; set; }
+        
+        public string PromptColorGeral { get;set; }
+
+        public string PromptColorFutebol { get; set; }
     }
 }

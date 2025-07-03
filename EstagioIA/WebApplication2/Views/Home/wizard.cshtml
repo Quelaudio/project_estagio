@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wizard </title>
+    <title>Wizard</title>
     <style>
         body {
             font-family: sans-serif;
@@ -92,18 +92,13 @@
             border-radius: 6px;
             font-size: 16px;
             resize: none;
+            background: #1e1e1e;
+            color: #dcdcdc;
+            overflow-x: auto;
         }
 
         input[type="file"] {
             margin-top: 1rem;
-        }
-
-        textarea {
-            background: #1e1e1e;
-            color: #dcdcdc;
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
         }
 
         .preview img {
@@ -130,17 +125,31 @@
             .btn:hover:enabled {
                 background: #5848e5;
             }
-    </style>
-    
 
+        #feedback {
+            margin-top: 1rem;
+            color: #555;
+            font-size: 14px;
+        }
+
+        #placeholderMap {
+            margin-top: 1.5rem;
+            background: #f1f1f1;
+            padding: 1rem;
+            border-radius: 8px;
+            color: #333;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">🅱️</div>
         <nav>
-            <a href="#" class="btn-link">Retirar Cores</a>
-            <a href="#" class="btn-link">Recortar Caras</a>
-            <a href="#" class="btn-link">Gerar Template HTML</a>
+            <a asp-controller="Home" asp-action="Index" class="btn-link">Retirar Cores</a>
+            <a asp-controller="Home" asp-action="Privacy" class="btn-link">Recortar Caras</a>
+            <a asp-controller="Home" asp-action="wizard" class="btn-link">Gerar Template HTML</a>
         </nav>
     </header>
 
@@ -153,12 +162,11 @@
         <div class="step active" id="step1">
             <h2>Etapa 1</h2>
             <p>Insira o prompt que deseja:</p>
-            <textarea id="userInput" placeholder="Ex: Exemplo motivador e persuasivo de call-to-action"></textarea>
+            <textarea id="userInput" placeholder=" Atua como uma API que devolve apenas templates html/css/js sem nenhum tipo de texto adicional."></textarea>
 
             <p>Envie uma imagem relacionada:</p>
             <input type="file" id="imageInput" accept="image/*" />
-
-            <button class="btn" id="btnPrompt" onclick="enviarPrompt()">Gerar Código</button>
+            <button class="btn" id="btnPrompt">Gerar Código</button>
         </div>
 
         <!-- Etapa 2 -->
@@ -166,14 +174,20 @@
             <h2>Etapa 2</h2>
             <p>HTML do Código Gerado:</p>
             <textarea id="codeOutput"></textarea>
+
+            <!-- "mapa" dos placeholders  -->
+            <div id="placeholderMap">
+                <strong> Campos detectados no template:</strong>
+                <ul id="placeholderList" style="margin-top: 10px; padding-left: 20px;"></ul>
+            </div>
+
             <input type="file" id="zipInput" accept=".zip" />
             <label>
-                <input type="checkbox" id="extractColors" name="extractColors" value="true" />
-
+                <input type="checkbox" id="extractColors" />
                 Extrair cores das imagens
             </label>
-            <input type="text" id="templateNameInput" placeholder="Nome do Template"  />
-            <button class="btn" onclick="enviarZip()">Enviar ZIP e Continuar</button>
+            <input type="text" id="templateNameInput" placeholder="Nome do Template" />
+            <button class="btn" id="btnZip">Enviar ZIP e Continuar</button>
         </div>
 
         <!-- Etapa 3 -->
@@ -182,95 +196,143 @@
             <p>Resultado Final:</p>
             <div class="preview" id="previewOutput"></div>
         </div>
+
+        <div id="feedback"></div>
     </div>
-    
+
     <script>
         let currentStep = 1;
 
         function updateProgress() {
-          document.getElementById("progressBar").style.width = `${(currentStep - 1) / 2 * 100}%`;
+            document.getElementById("progressBar").style.width = `${(currentStep - 1) / 2 * 100}%`;
         }
 
         function showStep(step) {
-          document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
-          document.getElementById(`step${step}`).classList.add('active');
-          currentStep = step;
-          updateProgress();
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            currentStep = step;
+            updateProgress();
         }
 
-          async function enviarPrompt() {
-          const prompt = document.getElementById("userInput").value.trim();
-          const imageFile = document.getElementById("imageInput").files[0];
-          const btn = document.getElementById("btnPrompt");
+        function atualizarFeedback(msg, isError = false) {
+            const feedbackEl = document.getElementById("feedback");
+            feedbackEl.style.color = isError ? "red" : "#555";
+            feedbackEl.innerText = msg;
+        }
 
-          if (!prompt) return alert("Digite um prompt!");
-          if (!imageFile) return alert("Selecione uma imagem!");
+        async function enviarPrompt() {
+            const prompt = document.getElementById("userInput").value.trim();
+            const imageFile = document.getElementById("imageInput").files[0];
+            const btn = document.getElementById("btnPrompt");
 
-          const formData = new FormData();
-        
-          formData.append("imageFile", imageFile);
-          formData.append("Prompt", prompt);
-          
+            if (!prompt) return alert("Digite um prompt!");
+            if (!imageFile) return alert("Selecione uma imagem!");
 
-          btn.disabled = true;
-          btn.innerText = "Gerando...";
+            const formData = new FormData();
+            formData.append("imageFile", imageFile);
+            formData.append("Prompt", prompt);
 
-          try {
-            const res = await fetch(`http://localhost:50372/Html/GetImage`, {
-              method: "POST",
-              body: formData
-            });
+            btn.disabled = true;
+            btn.innerText = "Gerando...";
+            atualizarFeedback("Enviando imagem e prompt...");
 
-            if (!res.ok) {
-              const msg = await res.text();
-              throw new Error(msg || "Erro ao gerar código");
+            try {
+                const res = await fetch(`http://localhost:50372/Html/GetImage`, {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!res.ok) {
+                    const msg = await res.text();
+                    throw new Error(msg || "Erro ao gerar código");
+                }
+
+                atualizarFeedback("Processando imagem e gerando HTML com base no prompt...");
+
+                const data = await res.text();
+                document.getElementById("codeOutput").value = data;
+
+                
+                const matches = [...data.matchAll(/{(.*?)}/g)];
+                const placeholderList = document.getElementById("placeholderList");
+                placeholderList.innerHTML = "";
+
+                if (matches.length > 0) {
+                    const unique = [...new Set(matches.map(m => m[1]))];
+                    unique.forEach(key => {
+                        const li = document.createElement("li");
+                        li.textContent = key;
+                        placeholderList.appendChild(li);
+                    });
+                } else {
+                    placeholderList.innerHTML = "<li>(Nenhum placeholder encontrado)</li>";
+                }
+
+                atualizarFeedback("HTML gerado com sucesso. Pronto para o próximo passo!");
+                showStep(2);
+            } catch (error) {
+                atualizarFeedback("Erro: " + error.message, true);
+                alert("Erro: " + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Gerar Código";
             }
-
-            const data = await res.text();
-            document.getElementById("codeOutput").innerText = data;
-            showStep(2);
-          } catch (error) {
-            alert("Erro: " + error.message);
-          } finally {
-            btn.disabled = false;
-            btn.innerText = "Gerar Código";
-          }
         }
 
+        async function enviarZip() {
+            const file = document.getElementById("zipInput").files[0];
+            const templateName = document.getElementById("templateNameInput").value.trim() || "default_template";
+            const extractColors = document.getElementById("extractColors").checked;
 
-          async function enviarZip() {
-          const file = document.getElementById("zipInput").files[0];
-          const templateName = document.getElementById("templateNameInput").value.trim() || "default_template";
-          const extractColors = document.getElementById("extractColors").checked; 
+            if (!file) return alert("Envie um arquivo .zip antes!");
 
-          if (!file) return alert("Envie um arquivo .zip antes!");
+            const formData = new FormData();
+            formData.append("zipFile", file);
 
-          const formData = new FormData();
-          formData.append("zipFile", file);
+            atualizarFeedback("Enviando arquivo ZIP para o servidor...");
 
-          try {
-            const res = await fetch(`http://localhost:50372/Html/GenerateTemplateFromZip?templateName=${encodeURIComponent(templateName)}&extractColors=${extractColors}`, {
-              method: "POST",
-              body: formData
-            });
+            try {
+                const res = await fetch(`http://localhost:50372/Html/GenerateTemplateFromZip?templateName=${encodeURIComponent(templateName)}&extractColors=${extractColors}`, {
+                    method: "POST",
+                    body: formData
+                });
 
-            if (!res.ok) {
-              const msg = await res.text();
-              throw new Error(msg || "Erro ao gerar o banner.");
+                if (!res.ok) {
+                    const msg = await res.text();
+                    throw new Error(msg || "Erro ao gerar o banner.");
+                }
+
+                atualizarFeedback("Gerando template a partir do ZIP...");
+
+                const json = await res.json();
+                const imgSrc = json.image;
+                const cores = json.colors || [];
+
+                const coresHtml = cores.map(cor => `
+                    <div style="color: #fff;">
+                        <strong style="font-size: 16px;">${cor.colourName}</strong>
+                        <div style="font-size: 14px; margin-top: 4px;">${cor.description}</div>
+                    </div>
+                `).join('');
+
+                document.getElementById("previewOutput").innerHTML = `
+                    <img src="${imgSrc}" alt="Resultado Final" style="max-width:100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 20px;">
+                        ${coresHtml}
+                    </div>
+                `;
+
+                atualizarFeedback("Template final gerado com sucesso!");
+                showStep(3);
+            } catch (err) {
+                atualizarFeedback("Erro ao enviar ZIP ou gerar o resultado final: " + err.message, true);
+                alert("Erro ao enviar ZIP ou obter o resultado final: " + err.message);
             }
-
-            const blob = await res.blob();
-            const imageUrl = URL.createObjectURL(blob);
-
-            document.getElementById("previewOutput").innerHTML = `<img src="${imageUrl}" alt="Resultado Final" style="max-width:100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />`;
-
-            showStep(3);
-          } catch (err) {
-            alert("Erro ao enviar ZIP ou obter o resultado final: " + err.message);
-          }
         }
 
-
+      
+        document.getElementById("btnPrompt").addEventListener("click", enviarPrompt);
+        document.getElementById("btnZip").addEventListener("click", enviarZip);
 
         updateProgress();
     </script>
